@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun numberPressed(num: String){
-        if(resultadoText.text == "0" && num != ".") {
+        
+        if((resultadoText.text == "0" && num != ".") || operacion != SIN_OPERACION ) {
             resultadoText.text = "$num"
         } else {
             resultadoText.text = "${resultadoText.text}$num"
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         this.operacion = operacion
         num1 = resultadoText.text.toString().toDouble()
 
-        resultadoText.text = "0"
+        resultadoText.text = "$num"
     }
 
     private fun resolvePressed(){
